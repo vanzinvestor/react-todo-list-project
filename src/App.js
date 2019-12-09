@@ -6,10 +6,7 @@ import TodoList from './components/TodoList';
 
 class App extends Component {
   state = {
-    items: [
-      { id: 1, title: 'wake up' },
-      { id: 2, title: 'make breakfast' },
-    ],
+    items: [],
     id: uuid(),
     item: '',
     editItem: false,
@@ -27,15 +24,12 @@ class App extends Component {
     };
     const updatedItem = [...this.state.items, newItem];
 
-    this.setState(
-      {
-        items: updatedItem,
-        item: '',
-        id: uuid(),
-        editItem: false,
-      },
-      () => console.log(this.state)
-    );
+    this.setState({
+      items: updatedItem,
+      item: '',
+      id: uuid(),
+      editItem: false,
+    });
   };
 
   clearList = () => {
