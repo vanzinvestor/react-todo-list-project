@@ -33,11 +33,13 @@ class App extends Component {
   };
 
   clearList = () => {
-    console.log('clear list');
+    this.setState({ items: [] });
   };
 
   handleDelete = id => {
-    console.log(`handle delete ${id} `);
+    const filterItems = this.state.items.filter(item => item.id !== id);
+
+    this.setState({ items: filterItems });
   };
 
   handleEdit = id => {
